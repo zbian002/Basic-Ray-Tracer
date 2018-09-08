@@ -1,11 +1,11 @@
-PROJECT: RAY TRACER
+# PROJECT: RAY TRACER
 
-I. COMPILING:
+## I. COMPILING:
 
 Use 'make' command to compile both of the executables: ray_tracer, ray_tracer_preview
 If opengl is not available, use 'make ray_tracer' to compile only the version without opengl viewer.
 
-II. RUNNING:
+## II. RUNNING:
 
 Two different version of the program is available:
   ray_tracer: This is the program that the grading script uses, this generates a output.png and diff.png files if the solution file is available
@@ -17,7 +17,7 @@ Two different version of the program is available:
   e.g.
     ./ray_tracer_preview -i ./tests/00.txt
 
-III. GRADING
+## III. GRADING
 
 The grading script goes through all tests in a given folder and provides you with a score. 
 To see your score, run the grading script by:
