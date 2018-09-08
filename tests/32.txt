@@ -1,0 +1,90 @@
+
+size 640 480
+color red 1 0 0
+color blue 0 0 1
+color blue2 .1 .1 .5
+color yellow 1 0.975 0.1431
+color dyellow 0.2 0.175 0.1431
+color dwhite 0.8 0.8 0.8
+color white 1 1 1
+color gray 0.3 0.3 0.3
+color black 0 0 0
+color green 0 1 0
+color green 0 1 0
+color purple 1 0 1
+color cyan 0 1 1
+phong_shader red_shader red red white 10
+phong_shader blue_shader blue blue black 5000
+phong_shader sky_shader blue2 blue2 black 50
+phong_shader yellow_shader yellow yellow white 1000
+phong_shader white_shader dwhite dwhite white 1
+flat_shader white_flat white 
+phong_shader gray_shader gray gray white 1
+phong_shader green_shader green green white 10000000
+phong_shader purple_shader purple purple white 10
+phong_shader cyan_shader cyan cyan white 100
+reflective_shader reflecty yellow_shader .8
+reflective_shader reflectr red_shader .8
+reflective_shader reflectgray gray_shader .8
+reflective_shader reflectb blue_shader .4
+refractive_shader refractt white_shader 0.7 0.01
+refractive_shader refractp blue_shader 1.54 0.0
+#backcam
+plane - 0 0 5 0 0 -1 green_shader 
+#back
+plane - 0 0 -10 0 0 1 green_shader 
+#left
+plane - -4 0 -10 1 0 0 green_shader 
+#right
+plane - 4 0 -10 -1 0 0 green_shader 
+#top
+plane - 0 5 0 0 -1 0 green_shader 
+#wallfront
+boundedplane - 0 0 -7 0 0 1 green_shader -10 -1 -10 -1 10 10
+#wallside
+boundedplane - -1 0 -7 1 0 0 green_shader -10 -10 -7.5 10 10 -7
+#plane - 0 0 0 0 1 0 refractp 
+
+sphere - -1 5.2 -4 0.3  white_flat
+point_light -1 4.8 -4 white 40
+#point_light 1 2 -9 white 40
+point_light 2 2 2 white 450
+sphere - 2 1.3 -2.4 0.8  refractp
+sphere - -2 1.3 -2.4 0.8  refractt
+sphere - 3 0.5 -5 0.5  reflectb
+sphere - 1 4 -5 0.7  cyan_shader
+sphere - 1 0.7 -3 0.3  red_shader
+sphere - 2.5 3 -7 0.9 reflectr
+sphere - -1.9 2 -7 0.9 purple_shader
+ambient_light white .25
+enable_shadows 1
+recursion_depth_limit 50
+camera 2.5 2 2 0 2 -10 0 1 0 70
+#MIRROR
+boundedplane - 3.9 0 0 -1 0 0 reflectgray -5 0.5 -4  5 3.5 -2
+
+
+
+#ground
+#plane - 0 0 0 0 1 0 gray_shader 
+
+boundedplane - 0 0 0 0 1 0 gray_shader -4 -1 -2 -2 1 0
+boundedplane - 0 0 0 0 1 0 white_shader -4 -1 -4 -2 1 -2
+boundedplane - 0 0 0 0 1 0 gray_shader -4 -1 -6 -2 1 -4
+boundedplane - 0 0 0 0 1 0 white_shader -4 -1 -8 -2 1 -6
+boundedplane - 0 0 0 0 1 0 gray_shader -4 -1 -10 -2 1 -8
+boundedplane - 0 0 0 0 1 0 white_shader -2 -1 -2 0 1 0
+boundedplane - 0 0 0 0 1 0 gray_shader -2 -1 -4 0 1 -2
+boundedplane - 0 0 0 0 1 0 white_shader -2 -1 -6 0 1 -4
+boundedplane - 0 0 0 0 1 0 gray_shader -2 -1 -8 0 1 -6
+boundedplane - 0 0 0 0 1 0 white_shader -2 -1 -10 0 1 -8
+boundedplane - 0 0 0 0 1 0 gray_shader 0 -1 -2 2 1 0
+boundedplane - 0 0 0 0 1 0 white_shader 0 -1 -4 2 1 -2
+boundedplane - 0 0 0 0 1 0 gray_shader 0 -1 -6 2 1 -4
+boundedplane - 0 0 0 0 1 0 white_shader 0 -1 -8 2 1 -6
+boundedplane - 0 0 0 0 1 0 gray_shader 0 -1 -10 2 1 -8
+boundedplane - 0 0 0 0 1 0 white_shader 2 -1 -2 4 1 0
+boundedplane - 0 0 0 0 1 0 gray_shader 2 -1 -4 4 1 -2
+boundedplane - 0 0 0 0 1 0 white_shader 2 -1 -6 4 1 -4
+boundedplane - 0 0 0 0 1 0 gray_shader 2 -1 -8 4 1 -6
+boundedplane - 0 0 0 0 1 0 white_shader 2 -1 -10 4 1 -8

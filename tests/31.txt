@@ -1,0 +1,33 @@
+size 640 480
+color black 0 0 0
+color blue .2 .2 .8
+color dblue .1 .1 .4
+color green 0 1 0
+color red 1 0 0
+color white 1 1 1
+color purple 1 0 1
+color yellow 1 0.675 0.3431
+phong_shader red_shader red red white 100
+phong_shader blue_shader blue blue white 50
+phong_shader dblue_shader dblue dblue black 50
+phong_shader green_shader green green green 100
+phong_shader purple_shader purple purple white 10
+phong_shader yellow_shader yellow yellow black 0.0001
+reflective_shader reflectg green_shader .9
+refractive_shader refractp purple_shader 1.54 0
+refractive_shader refractt purple_shader 1.24 0
+sphere - -1 0.5 -2 1 reflectg
+sphere - 1 0 1 .5 red_shader
+sphere - 0 0 1 .5 blue_shader
+sphere - -2 0 1 .5 purple_shader
+sphere - 0.4 1.4 6 .7 refractt
+sphere - -0.2 1.1 2 .7 refractp
+plane - 0 -0.5 0 0 1 0 yellow_shader
+plane - 0 -0.5 -8 0 0 1 dblue_shader
+recursion_depth_limit 1
+camera 0 2 14 0 0 -8 0 1 0 30
+ambient_light white .3
+enable_shadows 1
+recursion_depth_limit 20
+point_light -5 5 10 white 1000
+

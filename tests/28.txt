@@ -1,0 +1,18 @@
+size 640 480
+color black 0 0 0
+color dblue .15 .15 .6
+color white 1 1 1
+color yellow 1 0.675 0.3431
+phong_shader dblue_shader dblue dblue black 50
+phong_shader yellow_shader yellow yellow black 0.0001
+phong_shader white_shader white white white 5
+refractive_shader refractp white_shader 1.34 0
+sphere - 0.2 1.3 4 .7 refractp
+plane - 0 -0.5 0 0 1 0 yellow_shader
+plane - 0 -0.5 -8 0 0 1 dblue_shader
+recursion_depth_limit 1
+camera 0 2 12 0 0 -8 0 1 0 30
+ambient_light white .3
+enable_shadows 1
+recursion_depth_limit 10
+point_light -5 5 10 white 1000
