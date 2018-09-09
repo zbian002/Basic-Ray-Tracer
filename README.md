@@ -22,5 +22,5 @@ Two different version of the program is available:
 
 ## Authors
 
-* **Zhen Bian** - *Initial work* - [PurpleBooth](https://github.com/zbian002/Basic-Ray-Tracer)
+* **Zhen Bian** - *Initial work* - [Basic Ray Tracer](https://github.com/zbian002/Basic-Ray-Tracer)
 
